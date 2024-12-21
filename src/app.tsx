@@ -2,6 +2,7 @@ import React from "react";
 import {Button} from "antd";
 import {ProTable} from "@ant-design/pro-components";
 import {useNavigate} from "react-router";
+import {test} from "./api/test";
 
 const Test = () => {
 
@@ -26,6 +27,17 @@ const Test = () => {
                     });
                 }}
             >handler</Button>
+
+
+            <Button
+                onClick={() => {
+                    test().then(res=>{
+                        console.log(res);
+                    })
+                }}
+            >
+                api
+            </Button>
 
             <ProTable/>
         </>

@@ -26,6 +26,8 @@ const config: ForgeConfig = {
         new AutoUnpackNativesPlugin({}),
         new WebpackPlugin({
             mainConfig,
+            // change default port (9000) to 9100
+            port:9100,
             renderer: {
                 config: rendererConfig,
                 entryPoints: [
