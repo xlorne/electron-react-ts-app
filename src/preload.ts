@@ -4,7 +4,6 @@
 import './main';
 import {contextBridge, ipcRenderer} from "electron";
 
-
 contextBridge.exposeInMainWorld('ipcRenderer', {
 
     removeListener: (channel:string) => {
@@ -16,6 +15,5 @@ contextBridge.exposeInMainWorld('ipcRenderer', {
     },
 })
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 window.ipcRenderer = ipcRenderer;
