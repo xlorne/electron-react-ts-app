@@ -1,9 +1,7 @@
 import {TestController} from "./test";
+import {EventController} from "./types";
+import {HttpController} from "./http";
 
-export interface EventController {
-
-    registerEvents(): void;
-}
 
 export class ControllerRegister {
 
@@ -23,6 +21,7 @@ export class ControllerRegister {
     }
 
     private initControllers() {
+        this.controllers.push(new HttpController());
         this.controllers.push(new TestController());
     }
 

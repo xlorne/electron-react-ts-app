@@ -3,6 +3,7 @@ import {Button} from "antd";
 import {ProTable} from "@ant-design/pro-components";
 import {useNavigate} from "react-router";
 import {test} from "./api/test";
+import {invoke} from "./api";
 
 const Test = () => {
 
@@ -21,8 +22,7 @@ const Test = () => {
 
             <Button
                 onClick={() => {
-                    // @ts-ignore
-                    window.ipcRenderer.invoke('test', 'test').then((res) => {
+                    invoke('test', 'test').then((res) => {
                         console.log(res);
                     });
                 }}

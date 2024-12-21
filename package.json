@@ -47,7 +47,6 @@
     "@ant-design/pro-components": "^2.8.2",
     "@reduxjs/toolkit": "^2.5.0",
     "antd": "^5.22.5",
-    "axios": "^1.7.9",
     "base64-js": "^1.5.1",
     "electron-squirrel-startup": "^1.0.1",
     "react": "^18.3.1",

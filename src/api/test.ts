@@ -1,6 +1,9 @@
-import {get} from "./index";
+import {post} from "./index";
 
 export const test = async () => {
-    return get("/open/test");
+    return post("/user/login",{
+        username:"admin",
+        password:"admin"
+    });
 }
 

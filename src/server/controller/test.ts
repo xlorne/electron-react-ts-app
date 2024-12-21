@@ -1,17 +1,18 @@
-import {EventController} from "./index";
-import {ipcMain} from "electron";
+import {EventController} from "./types";
+import * as console from "node:console";
 
-export class TestController implements EventController{
+export class TestController extends EventController{
 
     public test(){
-        ipcMain.handle('test', (event, args) => {
+        super.registerHandler('test', (event, args) => {
             console.log('test 123:', args);
             return 'test';
         });
     }
 
     registerEvents(): void {
-        this.test();
+       this.test();
     }
+
 }
 
