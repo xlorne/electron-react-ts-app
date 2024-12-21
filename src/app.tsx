@@ -1,19 +1,19 @@
 import React from "react";
 import {Button} from "antd";
 import {ProTable} from "@ant-design/pro-components";
+import {useNavigate} from "react-router";
 
 const Test = () => {
 
     document.title = 'Test';
 
-    const [version,setVersion] = React.useState(0);
+    const navigate = useNavigate();
 
     return (
         <>
-            {version}
             <Button
-                onClick={()=>{
-                    setVersion(Math.random());
+                onClick={() => {
+                    navigate('/test');
                 }}
             >test</Button>
 
