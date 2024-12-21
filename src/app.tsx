@@ -17,6 +17,16 @@ const Test = () => {
                 }}
             >test</Button>
 
+
+            <Button
+                onClick={() => {
+                    // @ts-ignore
+                    window.ipcRenderer.invoke('test', 'test').then((res) => {
+                        console.log(res);
+                    });
+                }}
+            >handler</Button>
+
             <ProTable/>
         </>
     )
