@@ -4,7 +4,7 @@ import {LogoutOutlined, SettingOutlined} from "@ant-design/icons";
 import {ModalForm, ProFormText} from "@ant-design/pro-components";
 import {useNavigate} from "react-router-dom";
 import HeaderDropdown from "../HeaderDropdown";
-// @ts-ignore
+//@ts-ignore
 import logo from "@/assets/logo.png";
 
 

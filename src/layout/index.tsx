@@ -2,12 +2,12 @@ import {ActionType, ProLayout} from '@ant-design/pro-components';
 import React, {useRef, useState} from 'react';
 import {Route, Routes} from "react-router";
 import {useNavigate} from "react-router-dom";
-import {config} from "../config/theme";
+import {config} from "@/config/theme";
 import AvatarHeader from "./AvatarHeader";
-import {menus} from "../config/menus";
+import {menus} from "@/config/menus";
 import NotFound from "./NotFound";
 import WelcomePage from "../pages/welcome";
-import "./index";
+import "./index.css";
 
 const welcomePath = config.welcomePath;
 const loginPath = config.loginPath;
@@ -23,6 +23,7 @@ const Layout = () => {
 
     return (
         <ProLayout
+            pure={false}
             siderWidth={config.siderWidth}
             layout={config.layout}
             location={{
