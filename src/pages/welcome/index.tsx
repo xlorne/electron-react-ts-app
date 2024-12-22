@@ -1,18 +1,18 @@
 import React from "react";
-import {Button} from "antd";
-import {ProTable} from "@ant-design/pro-components";
 import {useNavigate} from "react-router";
-import {test} from "./api/test";
-import {invoke} from "./api";
+import {Button} from "antd";
+import {invoke} from "../../api";
+import {test} from "../../api/test";
+import {PageContainer, ProTable} from "@ant-design/pro-components";
 
-const Test = () => {
+const WelcomePage = () => {
 
-    document.title = 'Test';
+    document.title = 'Welcome Page ';
 
     const navigate = useNavigate();
 
     return (
-        <>
+        <PageContainer>
             <Button
                 onClick={() => {
                     navigate('/test');
@@ -31,7 +31,7 @@ const Test = () => {
 
             <Button
                 onClick={() => {
-                    test().then(res=>{
+                    test().then(res => {
                         console.log(res);
                     })
                 }}
@@ -40,8 +40,8 @@ const Test = () => {
             </Button>
 
             <ProTable/>
-        </>
+        </PageContainer>
     )
 }
 
-export default Test;
+export default WelcomePage;

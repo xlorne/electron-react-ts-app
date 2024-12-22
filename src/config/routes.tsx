@@ -1,13 +1,25 @@
-import App from "../app";
-import Test from "../compoments/test";
+import Login from "../pages/login";
+import NotFound from "../layout/NotFound";
+import Layout from "../layout";
+import WelcomePage from "../pages/welcome";
 
 export const routes = [
     {
-        path:"/test",
-        element: <Test/>,
+        path: "/login",
+        element: <Login/>,
     },
     {
-        path:"/",
-        element: <App/>,
-    }
+        path: '/',
+        element: <Layout/>,
+        children: [
+            {
+                path: "/welcome",
+                element: <WelcomePage/>,
+            },
+            {
+                path: '/*',
+                element: <NotFound/>,
+            }
+        ]
+    },
 ];
