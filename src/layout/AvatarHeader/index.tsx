@@ -4,6 +4,8 @@ import {LogoutOutlined, SettingOutlined} from "@ant-design/icons";
 import {ModalForm, ProFormText} from "@ant-design/pro-components";
 import {useNavigate} from "react-router-dom";
 import HeaderDropdown from "../HeaderDropdown";
+// @ts-ignore
+import logo from "@/assets/logo.png";
 
 
 interface AvatarHeaderProps {
@@ -15,7 +17,6 @@ const AvatarHeader: React.FC<AvatarHeaderProps> = (props) => {
     const navigate = useNavigate();
 
     const username = localStorage.getItem('username');
-    const avatar = localStorage.getItem('avatar');
 
     const loginOut = () => {
         // clearUser();
@@ -59,7 +60,7 @@ const AvatarHeader: React.FC<AvatarHeaderProps> = (props) => {
                 }}
             >
                 <div>
-                    <Avatar src={avatar} style={{
+                    <Avatar src={logo} style={{
                         marginRight:10
                     }}/>
                     {username}

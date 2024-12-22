@@ -1,4 +1,8 @@
 import {ThemeConfig} from "antd";
+
+// @ts-ignore
+import logo from "@/assets/logo.png";
+
 export const theme = {
     token: {
         colorPrimary: '#4a79d8',
@@ -12,7 +16,7 @@ export const config = {
     // 后台名称
     title: 'Admin UI',
     // 后台logo
-    logo: '/logo.png',
+    logo: logo,
     // 欢迎页路径
     welcomePath: '/welcome',
     // 登录页路径
