@@ -1,12 +1,11 @@
 import {ActionType, ProLayout} from '@ant-design/pro-components';
 import React, {useRef, useState} from 'react';
-import {Route, Routes} from "react-router";
+import {Routes} from "react-router";
 import {useNavigate} from "react-router-dom";
 import {config} from "@/config/theme";
 import AvatarHeader from "./AvatarHeader";
 import {menus} from "@/config/menus";
-import NotFound from "./NotFound";
-import WelcomePage from "../pages/welcome";
+import {loadLayoutRoutes} from "@/config/routes";
 import "./index.css";
 
 const welcomePath = config.welcomePath;
@@ -64,18 +63,18 @@ const Layout = () => {
             actionsRender={(props) => {
                 return [];
             }}
-            onPageChange={(location:any) => {
+            onPageChange={(location: any) => {
                 const token = localStorage.getItem('token');
                 if (!token) {
                     navigate(loginPath, {replace: true});
-                }else{
+                } else {
                     navigate(location.pathname);
                 }
             }}
             menuItemRender={(item, dom) => (
                 <div
                     style={{
-                        width:"100%"
+                        width: "100%"
                     }}
                     onClick={() => {
                         const currentPath = item.path || welcomePath
@@ -88,12 +87,7 @@ const Layout = () => {
             )}
         >
             <Routes>
-                <Route path={"/welcome"}
-                       key={"welcome"}
-                       element={<WelcomePage/>}/>
-                <Route path={"/*"}
-                       key={"404"}
-                       element={<NotFound/>}/>
+                {loadLayoutRoutes()}
             </Routes>
         </ProLayout>
     );
