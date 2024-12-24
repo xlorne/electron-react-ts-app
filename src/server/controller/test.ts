@@ -6,10 +6,9 @@ export class TestController extends EventController{
 
     public test(){
         super.registerHandler('test', async (event, args) => {
-            console.log('test 123:', args);
+            console.log('test:', args);
             const list =  await findAll();
             console.log(list);
-
             const data = {
                 dirs: ['test'],
                 ignorePaths: ['test'],
