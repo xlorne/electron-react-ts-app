@@ -6,13 +6,12 @@ import {ConfigProvider} from "antd";
 
 const RouteContext = createContext(null);
 
-window.onload = () => {
+document.addEventListener('DOMContentLoaded', () => {
     const div = document.getElementById('root');
     if (div) {
         const root = ReactDOM.createRoot(div);
         root.render(
             <ConfigProvider virtual={false} >
-                {/* 你的应用组件 */}
                 <RouteContext.Provider
                     value={null}
                 >
@@ -24,4 +23,4 @@ window.onload = () => {
     } else {
         console.error("Element with id 'app' not found");
     }
-};
+});
