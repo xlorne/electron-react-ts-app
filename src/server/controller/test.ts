@@ -2,12 +2,12 @@ import {EventController} from "./types";
 import * as console from "node:console";
 import {findAll, insert} from "@/server/model/db";
 
-export class TestController extends EventController{
+export class TestController extends EventController {
 
-    public test(){
+    public test() {
         super.registerHandler('test', async (event, args) => {
             console.log('test:', args);
-            const list =  await findAll();
+            const list = await findAll();
             console.log(list);
             const data = {
                 dirs: ['test'],
@@ -17,12 +17,12 @@ export class TestController extends EventController{
                 customLength: 1
             }
             await insert(data);
-            return 'test';
+            return 'test' + list.length;
         });
     }
 
     registerEvents(): void {
-       this.test();
+        this.test();
     }
 
 }

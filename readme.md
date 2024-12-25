@@ -39,4 +39,5 @@ document.addEventListener('DOMContentLoaded', () => {
 [antd pro components](https://procomponents.ant.design/components)    
 [antd](https://ant.design/index-cn)    
 [how to fix sqlite3 error](https://stackoverflow.com/questions/76684989/electronjs-electron-forge-please-install)  
-[hot module replacement](https://www.electronforge.io/config/plugins/webpack#hot-module-replacement)  
+[hot module replacement](https://www.electronforge.io/config/plugins/webpack#hot-module-replacement)    
+[static file load](https://stackoverflow.com/questions/60839621/cant-use-static-files-in-electron-forge) 

@@ -28,6 +28,7 @@ const config: ForgeConfig = {
             mainConfig,
             // change default port (9000) to 9100
             port:9100,
+            devContentSecurityPolicy:"default-src 'self' 'unsafe-eval' 'unsafe-inline' static: http: https: ws:", // <--- this line
             renderer: {
                 config: rendererConfig,
                 entryPoints: [

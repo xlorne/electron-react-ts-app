@@ -1,6 +1,6 @@
 import React from "react";
 import {useNavigate} from "react-router";
-import {Button} from "antd";
+import {Button, Image} from "antd";
 import {invoke} from "@/api";
 import {test} from "@/api/test";
 import {PageContainer, ProTable} from "@ant-design/pro-components";
@@ -13,6 +13,7 @@ const WelcomePage = () => {
 
     return (
         <PageContainer>
+            <Image src={"static://assets/github.png"}/>
             <Button
                 onClick={() => {
                     navigate('/test');
