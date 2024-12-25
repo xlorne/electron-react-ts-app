@@ -26,9 +26,10 @@ const config: ForgeConfig = {
         new AutoUnpackNativesPlugin({}),
         new WebpackPlugin({
             mainConfig,
-            // change default port (9000) to 9100
-            port:9100,
-            devContentSecurityPolicy:"default-src 'self' 'unsafe-eval' 'unsafe-inline' static: http: https: ws:", // <--- this line
+            // change default loggerPort (default 9000) to 9100
+            loggerPort: 9100,
+            devContentSecurityPolicy: " default-src 'self' 'unsafe-eval' 'unsafe-inline' static: http: https: ws:;img-src 'self' data: http: https: static:;".replace(/\s+/g, ' ').trim(),
+
             renderer: {
                 config: rendererConfig,
                 entryPoints: [
