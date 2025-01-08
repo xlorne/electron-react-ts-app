@@ -18,8 +18,12 @@ const createWindow = (): void => {
 
     protocol.handle('static', (request) => {
         const fileUrl = request.url.replace('static://', '');
-        const filePath = path.join(app.getAppPath(), '.webpack/renderer', fileUrl);
-        return HttpUtils.request(`file://${filePath}`);
+        if(fileUrl.startsWith("assets")) {
+            const filePath = path.join(app.getAppPath(), '.webpack/renderer', fileUrl);
+            return HttpUtils.request(`file://${filePath}`);
+        }else {
+            return HttpUtils.request(`file:///${fileUrl}`);
+        }
     });
 
     // Create the browser window.
