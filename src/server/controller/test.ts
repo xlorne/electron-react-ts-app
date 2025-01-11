@@ -1,23 +1,13 @@
 import {EventController} from "./types";
-import * as console from "node:console";
-import {findAll, insert} from "@/server/model/db";
+import {MediaUtils} from "@/server/utils/media";
 
 export class TestController extends EventController {
 
     public test() {
         super.registerHandler('test', async (event, args) => {
-            console.log('test:', args);
-            const list = await findAll();
-            console.log(list);
-            const data = {
-                dirs: ['test'],
-                ignorePaths: ['test'],
-                types: ['test'],
-                customType: 'test',
-                customLength: 1
-            }
-            await insert(data);
-            return 'test' + list.length;
+            MediaUtils.loadMediaInfo('/Users/lorne/Downloads/123.mkv').then((result) => {
+                console.log(result);
+            });
         });
     }
 

@@ -15,7 +15,7 @@ const WelcomePage = () => {
         <PageContainer>
             <Row>
                 <Image src={"static://assets/github.png"}/>
-                <Image src={"static://Users/lorne/Downloads/package.png"}/>
+                <Image src={"static://Users/lorne/Downloads/123.jpg"}/>
             </Row>
 
             <Button

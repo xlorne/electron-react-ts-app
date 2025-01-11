@@ -1,4 +1,5 @@
 import {net} from "electron";
+import * as net2 from "net";
 
 export class HttpUtils {
 
