@@ -1,13 +1,14 @@
 import React from "react";
 import {useNavigate} from "react-router";
-import {Button, Image, Row} from "antd";
+import {Button, Image, message, Row} from "antd";
 import {invoke} from "@/api";
-import {test} from "@/api/test";
+import {login} from "@/api/test";
 import {PageContainer, ProTable} from "@ant-design/pro-components";
 
 const WelcomePage = () => {
 
     document.title = 'Welcome Page ';
+
 
     const navigate = useNavigate();
 
@@ -15,33 +16,31 @@ const WelcomePage = () => {
         <PageContainer>
             <Row>
                 <Image src={"static://assets/github.png"}/>
-                <Image src={"static://Users/lorne/Downloads/package.png"}/>
             </Row>
 
             <Button
                 onClick={() => {
                     navigate('/test');
                 }}
+            >go</Button>
+
+
+            <Button
+                onClick={async () => {
+                    const res = await invoke('test', 'test');
+                    message.success(res);
+                }}
             >test</Button>
 
 
             <Button
                 onClick={() => {
-                    invoke('test', 'test').then((res) => {
-                        console.log(res);
-                    });
-                }}
-            >handler</Button>
-
-
-            <Button
-                onClick={() => {
-                    test().then(res => {
+                    login().then(res => {
                         console.log(res);
                     })
                 }}
             >
-                api
+                login
             </Button>
 
             <ProTable/>
